@@ -1,0 +1,55 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "projen": "lerna run projen",
+    "package": "tools/pack.sh && tools/collect-dist.sh",
+    "integration": "tests/run-against-dist tests/test-all.sh",
+    "integration:update": "UPDATE_SNAPSHOTS=1 yarn integration"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "examples/**/*"
+    ],
+    "nohoist": [
+      "cdkactions/dedent-js",
+      "cdkactions/dedent-js/**",
+      "cdkactions/js-yaml",
+      "cdkactions/js-yaml/**",
+      "cdkactions/yaml",
+      "cdkactions/yaml/**"
+    ]
+  },
+  "devDependencies": {
+    "changelog-parser": "^2.8.0",
+    "codecov": "^3.8.1",
+    "jsii-release": "^0.2.3",
+    "lerna": "^3.22.1",
+    "semver": "7.3.2",
+    "standard-version": "^9.0.0"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "preset": "ts-jest",
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    }
+  }
+}

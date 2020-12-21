@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toGHAction 1`] = `
+Object {
+  "continue-on-error": true,
+  "runs-on": "ubuntu-latest",
+  "steps": Array [
+    Object {
+      "continue-on-error": false,
+      "name": "step",
+      "timeout-minutes": 5,
+      "working-directory": "~/",
+    },
+  ],
+  "strategy": Object {
+    "fail-fast": true,
+    "max-parallel": 11,
+  },
+  "timeout-minutes": 10,
+}
+`;

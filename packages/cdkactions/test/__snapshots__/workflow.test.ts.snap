@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`toGHAction 1`] = `
+Object {
+  "defaults": Object {
+    "run": Object {
+      "working-directory": "~/",
+    },
+  },
+  "jobs": Object {},
+  "name": "Test",
+  "on": Object {
+    "issue_comment": Object {
+      "types": Array [
+        "created",
+      ],
+    },
+    "pull_request": Object {
+      "paths": Array [
+        "test/",
+      ],
+      "paths-ignore": Array [
+        "ignore-path/",
+      ],
+      "types": Array [
+        "opened",
+      ],
+    },
+  },
+}
+`;

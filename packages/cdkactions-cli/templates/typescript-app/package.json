@@ -1,0 +1,15 @@
+{
+  "name": "{{ $base }}",
+  "version": "0.1.0",
+  "main": "main.js",
+  "types": "main.ts",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "synth": "cdkactions synth",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "build": "yarn compile && yarn synth",
+    "upgrade-cdk": "yarn upgrade cdkactions@latest cdkactions-cli@latest"
+  }
+}
