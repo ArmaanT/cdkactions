@@ -1,7 +1,6 @@
 # cdkactions
 
 ![Release](https://github.com/ArmaanT/cdkactions/workflows/Release/badge.svg)
-
 [![codecov](https://codecov.io/gh/ArmaanT/cdkactions/branch/master/graph/badge.svg)](https://codecov.io/gh/ArmaanT/cdkactions)
 [![NPM](https://badge.fury.io/js/cdkactions.svg)](https://badge.fury.io/js/cdkactions)
 [![PyPI](https://badge.fury.io/py/cdkactions.svg)](https://badge.fury.io/py/cdkactions)
