@@ -22,7 +22,11 @@ export const formatGHActionsYaml = (rawYaml: string) => {
   const on_re = /'on':/g;
   const fixedOn = fixedDoubleQuotes.replace(on_re, 'on:');
 
-  return fixedOn;
+  // Removes nested single quotes like in "key: '${{ hashFiles('example/yarn.lock') }}'"
+  const nested_re = /: '([^'\n\r]*'[^'\n\r]*'.*)'/g;
+  const fixedNested = fixedOn.replace(nested_re, ': $1');
+
+  return fixedNested;
 };
 
 /**

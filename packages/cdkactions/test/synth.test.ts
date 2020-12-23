@@ -28,6 +28,14 @@ test('complicated stack', () => {
         runsOn: 'ubuntu-latest',
         steps: [
           {
+            name: 'Cache',
+            uses: 'actions/cache@v2',
+            with: {
+              path: '**/files',
+              key: 'v0-${{ hashFiles(\'Dockerfile\') }}',
+            },
+          },
+          {
             name: 'Build docker',
             uses: 'docker/build-push-action@v1',
             with: {
