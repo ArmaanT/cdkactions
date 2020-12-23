@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.1 (2020-12-23)
+## 0.1.2 (2020-12-23)
 
 * Fix nested single quotes in values
 
