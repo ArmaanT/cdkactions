@@ -30,12 +30,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.1.0",
+    "@types/fs-extra": "^9.0.6",
     "@types/jest": "^26.0.7",
-    "@types/node": "^10.17.0",
+    "@types/node": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
-    "eslint": "^7.12.1",
+    "eslint": "^7.16.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -48,12 +48,12 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "cdkactions": "0.0.0",
-    "constructs": "^3.2.3",
+    "cdkactions": "^0.0.0",
+    "constructs": "^5.0.0",
     "fs-extra": "^9.0.1",
     "sscaff": "^1.2.0",
     "yaml": "^1.10.0",
-    "yargs": "^16.1.0"
+    "yargs": "^16.2.0"
   },
   "bundledDependencies": [],
   "keywords": [
@@ -62,6 +62,9 @@
     "constructs",
     "github"
   ],
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "start": {

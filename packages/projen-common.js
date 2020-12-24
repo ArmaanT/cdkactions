@@ -1,10 +1,5 @@
-
-exports.versions = {
-    constructs: '3.2.3',
-    jsii: '1.14.0',
-};
-
 exports.options = {
+    minNodeVersion: '12.0.0',
     repository: "https://github.com/ArmaanT/cdkactions.git",
     authorName: "Armaan Tobaccowalla",
     authorAddress: "armaan@tobaccowalla.com",

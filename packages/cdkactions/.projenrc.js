@@ -1,27 +1,20 @@
-const { JsiiProject, Semver } = require("projen");
+const { JsiiProject } = require("projen");
 
 const common = require("../projen-common");
-
-const constructs_version = "3.2.3";
 
 const project = new JsiiProject({
   name: "cdkactions",
   description: "Cloud Development Kit for GitHub Actions",
   ...common.options,
 
-  jsiiVersion: Semver.caret(common.versions.jsii),
-  peerDependencies: {
-    constructs: Semver.caret(constructs_version),
+  peerDependencyOptions: {
+    pinnedDevDependency: false,
   },
-  devDependencies: {
-    constructs: Semver.caret(constructs_version),
-    "@types/js-yaml": Semver.caret("3.12.5"),
-  },
-  dependencies: {
-    "js-yaml": Semver.caret("3.14.0"),
-    "dedent-js": Semver.caret("1.0.1"),
-  },
-  bundledDependencies: [
+
+  peerDeps: ['constructs'],
+  devDeps: ['constructs', '@types/js-yaml'],
+  deps: ['js-yaml', 'dedent-js'],
+  bundledDeps: [
     "js-yaml",
     "dedent-js",
   ],

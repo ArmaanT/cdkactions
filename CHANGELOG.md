@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 (2020-12-23)
+
+* Update repo configuration
+
 ## 0.1.2 (2020-12-23)
 
 * Fix nested single quotes in values

@@ -23,8 +23,8 @@ export const formatGHActionsYaml = (rawYaml: string) => {
   const fixedOn = fixedDoubleQuotes.replace(on_re, 'on:');
 
   // Removes nested single quotes like in "key: '${{ hashFiles('example/yarn.lock') }}'"
-  const nested_re = /: '([^'\n\r]*'[^'\n\r]*'.*)'/g;
-  const fixedNested = fixedOn.replace(nested_re, ': $1');
+  const nested_re = /: '([^'\n\r]*'[^'\n\r]*'.*)'\n/g;
+  const fixedNested = fixedOn.replace(nested_re, ': $1\n');
 
   return fixedNested;
 };
