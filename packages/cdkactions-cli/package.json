@@ -15,24 +15,24 @@
     "no-changes": "(git log --oneline -1 | grep -q \"chore(release):\") && echo \"No changes to release.\"",
     "bump": "yarn run --silent no-changes || standard-version",
     "release": "yarn run --silent no-changes || (yarn run bump && git push --follow-tags origin master)",
+    "test": "rm -fr lib/ && jest --passWithNoTests && yarn run eslint && yarn compile",
+    "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot",
     "projen:upgrade": "yarn upgrade -L projen && CI=\"\" yarn projen",
     "compile": "tsc",
     "watch": "tsc -w",
     "build": "yarn compile",
     "package": "rm -fr dist && mkdir -p dist/js && yarn pack && mv *.tgz dist/js/",
-    "test": "rm -fr lib/ && jest --passWithNoTests && yarn run eslint && yarn compile",
-    "test:watch": "jest --watch",
-    "test:update": "jest --updateSnapshot",
-    "eslint": "eslint --ext .ts --fix src test"
+    "eslint": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test"
   },
   "author": {
     "name": "Armaan Tobaccowalla",
     "organization": false
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.6",
+    "@types/fs-extra": "^8.1.0",
     "@types/jest": "^26.0.7",
-    "@types/node": "^12.0.0",
+    "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^7.16.0",
@@ -40,8 +40,9 @@
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.4.2",
+    "jest-junit": "^12",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.141",
+    "projen": "^0.3.178",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -50,7 +51,7 @@
   "dependencies": {
     "cdkactions": "^0.0.0",
     "constructs": "^5.0.0",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^8.1.0",
     "sscaff": "^1.2.0",
     "yaml": "^1.10.0",
     "yargs": "^16.2.0"
@@ -63,7 +64,7 @@
     "github"
   ],
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 10.17.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
@@ -86,6 +87,16 @@
       "desc": "Bumps version & push to master",
       "command": "yarn run release",
       "category": 2
+    },
+    "test": {
+      "desc": "Run tests",
+      "command": "yarn run test",
+      "category": 1
+    },
+    "test:watch": {
+      "desc": "Run jest in watch mode",
+      "command": "yarn run test:watch",
+      "category": 1
     },
     "projen:upgrade": {
       "desc": "upgrades projen to the latest version",
@@ -112,16 +123,6 @@
       "command": "yarn run package",
       "category": 2
     },
-    "test": {
-      "desc": "Run tests",
-      "command": "yarn run test",
-      "category": 1
-    },
-    "test:watch": {
-      "desc": "Run jest in watch mode",
-      "command": "yarn run test:watch",
-      "category": 1
-    },
     "eslint": {
       "desc": "Runs eslint against the codebase",
       "command": "yarn run eslint",
@@ -129,25 +130,35 @@
     }
   },
   "version": "0.0.0",
-  "types": "lib/index.d.ts",
   "jest": {
     "clearMocks": true,
     "collectCoverage": true,
+    "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "preset": "ts-jest",
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
       "**/?(*.)+(spec|test).ts?(x)"
     ],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-reports"
+        }
+      ]
+    ],
+    "preset": "ts-jest",
     "globals": {
       "ts-jest": {
         "tsconfig": "tsconfig.jest.json"
       }
     }
-  }
+  },
+  "types": "lib/index.d.ts"
 }
