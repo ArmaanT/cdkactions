@@ -2565,10 +2565,10 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
-constructs@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-5.0.0.tgz#2f7543e1ac25e097f572228a3e4c2f96b2c804a0"
-  integrity sha512-KTUyOLj+Df3rw4MG5oax19nJYlWApOiuEVxRgNZT63VFt24a2kaFqQiPggXw3yoaSqhW1V5uL/CGRWYvJ56CVw==
+constructs@^3.2.80:
+  version "3.2.80"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.80.tgz#d4129f109eb9839359fe7a6614ae65db9da878a0"
+  integrity sha512-m32Iz4DJUb2gwi0C8ph/HwiTamU4IeiOcdWDXkZAG5iW/+dM04xV0zLr8/VVPpmbinJ8Hdgbon+S55v3moYd2g==
 
 contains-path@^0.1.0:
   version "0.1.0"

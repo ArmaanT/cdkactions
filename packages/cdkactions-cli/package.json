@@ -50,7 +50,7 @@
   "peerDependencies": {},
   "dependencies": {
     "cdkactions": "^0.0.0",
-    "constructs": "^5.0.0",
+    "constructs": "^3.2.80",
     "fs-extra": "^8.1.0",
     "sscaff": "^1.2.0",
     "yaml": "^1.10.0",

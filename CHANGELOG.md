@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 (2020-12-23)
+
+* Update aws constructs (accidental major bump)
+
 ## 0.1.3 (2020-12-23)
 
 * Update repo configuration

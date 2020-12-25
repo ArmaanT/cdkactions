@@ -36,7 +36,7 @@
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
-    "constructs": "^5.0.0",
+    "constructs": "^3.2.80",
     "eslint": "^7.16.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.3.0",
@@ -54,7 +54,7 @@
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "constructs": "^5.0.0"
+    "constructs": "^3.2.80"
   },
   "dependencies": {
     "dedent-js": "^1.0.1",
