@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0 (2021-01-05)
+
+* Migrate from dedent-js to ts-dedent
+* Leave dedent commented out by default in ts init
+* Update js-yaml to 4.0.0 and remove custom yaml formatting workarounds
+
 ## 0.1.4 (2020-12-23)
 
 * Update aws constructs (accidental major bump)

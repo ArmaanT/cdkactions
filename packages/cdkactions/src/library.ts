@@ -1,5 +1,5 @@
 import { Construct } from 'constructs';
-import * as dedent from 'dedent-js';
+import dedent from 'ts-dedent';
 import { Job, JobProps, StepsProps } from './job';
 import { Stack } from './stack';
 import { Workflow } from './workflow';

@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.7",
-    "@types/js-yaml": "^3.12.5",
+    "@types/js-yaml": "^4.0.0",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
@@ -57,12 +57,12 @@
     "constructs": "^3.2.80"
   },
   "dependencies": {
-    "dedent-js": "^1.0.1",
-    "js-yaml": "^3.14.1"
+    "js-yaml": "^4.0.0",
+    "ts-dedent": "^2.0.0"
   },
   "bundledDependencies": [
-    "dedent-js",
-    "js-yaml"
+    "js-yaml",
+    "ts-dedent"
   ],
   "keywords": [
     "actions",

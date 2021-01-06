@@ -16,8 +16,8 @@
       "examples/**/*"
     ],
     "nohoist": [
-      "cdkactions/dedent-js",
-      "cdkactions/dedent-js/**",
+      "cdkactions/ts-dedent",
+      "cdkactions/ts-dedent/**",
       "cdkactions/js-yaml",
       "cdkactions/js-yaml/**",
       "cdkactions/yaml",

@@ -1,4 +1,4 @@
-import * as dedent from 'dedent-js';
+import dedent from 'ts-dedent';
 import { Construct } from "constructs";
 import { App, Stack, Workflow, Job } from "cdkactions";
 

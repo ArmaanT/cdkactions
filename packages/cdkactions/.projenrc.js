@@ -13,10 +13,10 @@ const project = new JsiiProject({
 
   peerDeps: ['constructs'],
   devDeps: ['constructs', '@types/js-yaml'],
-  deps: ['js-yaml', 'dedent-js'],
+  deps: ['js-yaml', 'ts-dedent'],
   bundledDeps: [
     "js-yaml",
-    "dedent-js",
+    "ts-dedent",
   ],
 
   python: {

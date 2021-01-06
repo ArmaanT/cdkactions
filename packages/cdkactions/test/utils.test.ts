@@ -1,6 +1,5 @@
 import { camelToSnake, renameKeys } from '../src/utils';
 
-// TODO: test formatGHActionsYaml
 
 test('renameKeys', () => {
   const obj = { oldKey: 'value', arr: [{ oldKey: 'different value' }] };
