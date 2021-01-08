@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 (2021-01-08)
+
+* Update documentation (no code changes)
+
 ## 0.2.0 (2021-01-05)
 
 * Migrate from dedent-js to ts-dedent

@@ -1,6 +1,6 @@
 # cdkactions-cli
 
-See the [Getting Started guides](../../docs/getting-started) for installation and usage instructions
+See the [Getting Started guides](https://github.com/ArmaanT/cdkactions/tree/master/docs/getting-started) for installation and usage instructions
 
 ## License
 
