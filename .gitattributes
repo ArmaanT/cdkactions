@@ -1,2 +1,1 @@
 *.py linguist-detectable=false
-docs/demo.gif filter=lfs diff=lfs merge=lfs -text
