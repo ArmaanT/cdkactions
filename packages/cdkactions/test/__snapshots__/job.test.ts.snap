@@ -11,6 +11,15 @@ Object {
       "timeout-minutes": 5,
       "working-directory": "~/",
     },
+    Object {
+      "name": "External action",
+      "uses": "actions/checkout@v2",
+      "with": Object {
+        "booleanValue": false,
+        "numberValue": 10,
+        "stringValue": "string",
+      },
+    },
   ],
   "strategy": Object {
     "fail-fast": true,

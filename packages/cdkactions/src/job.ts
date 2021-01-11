@@ -86,7 +86,7 @@ export interface StepsProps extends RunProps {
   /**
    * A map of parameters for an external action.
    */
-  readonly with?: StringMap;
+  readonly with?: { [key: string]: string | number | boolean };
 
   /**
    * Additional environment variables.

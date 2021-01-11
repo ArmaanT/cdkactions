@@ -14,6 +14,15 @@ test('toGHAction', () => {
       continueOnError: false,
       timeoutMinutes: 5,
       workingDirectory: '~/',
+    },
+    {
+      name: 'External action',
+      uses: 'actions/checkout@v2',
+      with: {
+        stringValue: 'string',
+        numberValue: 10,
+        booleanValue: false,
+      },
     }],
   });
   expect(job.toGHAction()).toMatchSnapshot();
