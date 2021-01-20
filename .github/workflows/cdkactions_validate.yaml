@@ -18,7 +18,7 @@ jobs:
           git --no-pager diff ../workflows
           git diff-index --quiet HEAD -- ../workflows
       - name: Push updated manifests
-        if: 'false'
+        if: "false"
         run: |-
           cd .github/workflows
           git config user.name github-actions

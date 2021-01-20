@@ -15,11 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
+      - name: Set version
+        run: tools/align-version.sh
       - name: Compile
-        run: |-
-          tools/align-version.sh
-          yarn build
+        run: yarn build
       - name: Unit Tests
         run: yarn test
       - name: Code Coverage
@@ -27,7 +27,7 @@ jobs:
       - name: Create Bundle
         run: yarn package
       - name: Integration Tests
-        run: 'echo TODO: add these'
+        run: "echo TODO: add these"
       - name: Upload artifact
         uses: actions/upload-artifact@v1
         with:
