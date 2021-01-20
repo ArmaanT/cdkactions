@@ -1,6 +1,5 @@
-import * as dedent from 'dedent-js';
 import { Construct } from "constructs";
-import { App, Stack, Workflow, Job } from "cdkactions";
+import { App, Stack, Workflow, Job, CheckoutJob } from "cdkactions";
 
 export class JSIIReleaseStack extends Stack {
   constructor(scope: Construct, name: string) {
@@ -12,21 +11,23 @@ export class JSIIReleaseStack extends Stack {
       on: ["pullRequest", "push"]
     });
 
-    new Job(build, 'build', {
+    new CheckoutJob(build, 'build', {
       runsOn: 'ubuntu-latest',
       container: {
         image: 'jsii/superchain'
       },
       steps: [
-        { uses: 'actions/checkout@v2' },
         {
           name: 'Install dependencies',
-          run: 'yarn install'
+          run: 'yarn install --frozen-lockfile'
+        },
+        {
+          name: 'Set version',
+          run: 'tools/align-version.sh'
         },
         {
           name: 'Compile',
-          run: dedent`tools/align-version.sh
-          yarn build`
+          run: 'yarn build'
         },
         {
           name: 'Unit Tests',
@@ -54,7 +55,7 @@ export class JSIIReleaseStack extends Stack {
       on: { push: { branches: ['master'] } }
     });
 
-    new Job(release, 'build_artifact', {
+    new CheckoutJob(release, 'build_artifact', {
       name: 'Build and upload artifact',
       if: "github.repository == 'ArmaanT/cdkactions'",
       runsOn: 'ubuntu-latest',
@@ -62,15 +63,17 @@ export class JSIIReleaseStack extends Stack {
         image: 'jsii/superchain'
       },
       steps: [
-        { uses: 'actions/checkout@v2' },
         {
           name: 'Install dependencies',
-          run: 'yarn install'
+          run: 'yarn install --frozen-lockfile'
+        },
+        {
+          name: 'Set version',
+          run: 'tools/align-version.sh'
         },
         {
           name: 'Compile',
-          run: dedent`tools/align-version.sh
-          yarn build`
+          run: 'yarn build'
         },
         {
           name: 'Unit Tests',

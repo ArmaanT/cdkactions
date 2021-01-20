@@ -13,7 +13,7 @@
     "upgrade-cdk": "yarn upgrade cdkactions@latest cdkactions-cli@latest"
   },
   "dependencies": {
-    "cdkactions": "^0.0.12",
+    "cdkactions": "^0.2.2",
     "constructs": "^3.2.9"
   },
   "devDependencies": {

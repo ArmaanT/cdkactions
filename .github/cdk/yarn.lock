@@ -26,6 +26,11 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/argparse/-/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==
+
 at-least-node@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz#602cd4b46e844ad4effc92a8011a3c46e0238dc2"
@@ -43,13 +48,21 @@ cdkactions-cli@^0.0.12:
     yaml "^1.10.0"
     yargs "^16.1.0"
 
-cdkactions@0.0.12, cdkactions@^0.0.12:
+cdkactions@0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/cdkactions/-/cdkactions-0.0.12.tgz#cfa8c9b6727bb397ca424b988b650a225d58a220"
   integrity sha512-V5WMTFAO3UUzJlYawm1SVXr/EGo/57MI8SZT9snf91zlU0Rb8K+zF3Ac4IBjghasLAsftWBd5V/GTx7+LfNEQw==
   dependencies:
     dedent-js "^1.0.1"
     js-yaml "^3.14.0"
+
+cdkactions@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/cdkactions/-/cdkactions-0.2.2.tgz#ef3e134e296385fe6b9503fd54b6336ccf554263"
+  integrity sha512-Ah8WWiGGslbDTtUBBUVk03V9oz88lweeKucogNM3VfGzXvfBtXef7K7eENRI1DZB/rCti7/jXwJhzwFz/n+QgQ==
+  dependencies:
+    js-yaml "^4.0.0"
+    ts-dedent "^2.0.0"
 
 cliui@^7.0.2:
   version "7.0.3"
@@ -130,6 +143,13 @@ js-yaml@^3.14.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
+js-yaml@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.0.0.tgz#f426bc0ff4b4051926cd588c71113183409a121f"
+  integrity sha512-pqon0s+4ScYUvX30wxQi3PogGFAlUyH0awepWvwkj4jD4v+ova3RiYw8bmA6x2rDrEaj8i/oWKoRxpVNW+Re8Q==
+  dependencies:
+    argparse "^2.0.1"
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.1.0.tgz#bc55b2634793c679ec6403094eb13698a6ec0aae"
@@ -169,6 +189,11 @@ strip-ansi@^6.0.0:
   integrity sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
   dependencies:
     ansi-regex "^5.0.0"
+
+ts-dedent@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ts-dedent/-/ts-dedent-2.0.0.tgz#47c5eb23d9096f3237cc413bc82d387d36dbe690"
+  integrity sha512-DfxKjSFQfw9+uf7N9Cy8Ebx9fv5fquK4hZ6SD3Rzr+1jKP6AVA6H8+B5457ZpUs0JKsGpGqIevbpZ9DMQJDp1A==
 
 typescript@^4.0.5:
   version "4.0.5"

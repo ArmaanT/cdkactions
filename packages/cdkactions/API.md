@@ -695,7 +695,7 @@ Name | Type | Description
 **shell**? | <code>string</code> | The shell to use.<br/>__*Optional*__
 **timeoutMinutes**? | <code>number</code> | Maximum time before killing the step.<br/>__*Optional*__
 **uses**? | <code>string</code> | Use an external action.<br/>__*Optional*__
-**with**? | <code>[StringMap](#cdkactions-stringmap)</code> | A map of parameters for an external action.<br/>__*Optional*__
+**with**? | <code>Map<string, string &#124; number &#124; boolean></code> | A map of parameters for an external action.<br/>__*Optional*__
 **workingDirectory**? | <code>string</code> | A custom working directory.<br/>__*Optional*__
 
 

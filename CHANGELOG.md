@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 (2021-01-20)
+
+* Small modification to repo CI
+* Update dependencies
+
 ## 0.2.2 (2021-01-11)
 
 * Fix the type of `with` to allow number and boolean values
