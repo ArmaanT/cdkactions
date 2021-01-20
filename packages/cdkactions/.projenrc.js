@@ -1,10 +1,10 @@
-const { JsiiProject } = require("projen");
+const { JsiiProject } = require('projen');
 
-const common = require("../projen-common");
+const common = require('../projen-common');
 
 const project = new JsiiProject({
-  name: "cdkactions",
-  description: "Cloud Development Kit for GitHub Actions",
+  name: 'cdkactions',
+  description: 'Cloud Development Kit for GitHub Actions',
   ...common.options,
 
   peerDependencyOptions: {
@@ -15,13 +15,13 @@ const project = new JsiiProject({
   devDeps: ['constructs', '@types/js-yaml'],
   deps: ['js-yaml', 'ts-dedent'],
   bundledDeps: [
-    "js-yaml",
-    "ts-dedent",
+    'js-yaml',
+    'ts-dedent',
   ],
 
   python: {
-    distName: "cdkactions",
-    module: "cdkactions",
+    distName: 'cdkactions',
+    module: 'cdkactions',
   },
 });
 
