@@ -9,6 +9,10 @@ test('toGHAction', () => {
       fastFail: true,
       maxParallel: 11,
     },
+    permissions: {
+      'id-token': 'write',
+      'contents': 'write',
+    },
     steps: [{
       name: 'step',
       continueOnError: false,

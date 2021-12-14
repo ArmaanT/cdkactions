@@ -1,6 +1,6 @@
 import { Construct, Node } from 'constructs';
 import { Job } from './job';
-import { StringMap, DefaultsProps } from './types';
+import { StringMap, DefaultsProps, PermissionsProps } from './types';
 import { renameKeys, camelToSnake } from './utils';
 
 /**
@@ -346,6 +346,12 @@ export interface WorkflowProps {
    * When to run this workflow.
    */
   readonly on: Events | Array<Events> | EventMap | ScheduleEvent | WorkflowRunEvent;
+
+  /**
+   * Modifies the default permissions granted to the GITHUB_TOKEN
+   * https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#permissions
+   */
+  readonly permissions?: PermissionsProps;
 
   /**
    * A map of environment variables to provide to the job.

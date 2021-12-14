@@ -35,3 +35,24 @@ export interface DefaultsProps {
    */
   readonly [key: string]: any;
 }
+
+/**
+ * Permissions to apply to all scopes
+ */
+export type PermissionAccessAll = 'read-all' | 'write-all';
+
+/**
+ * Permissions to apply to individual scopes
+ */
+export type PermissionAccess = 'read' | 'write' | 'none';
+
+/**
+ * All available permission scopes
+ */
+export type PermissionScope = 'actions' | 'checks' | 'contents' | 'deployments' | 'id-token' | 'issues' | 'discussions' | 'packages' | 'pages' | 'pull-requests' | 'repository-projects' | 'security-events' | 'statuses';
+
+/**
+ * Configuration for permissions
+ */
+export type PermissionsProps = PermissionAccessAll | Partial<Record<PermissionScope, PermissionAccess>>;
+
