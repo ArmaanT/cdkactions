@@ -3,6 +3,10 @@
 exports[`toGHAction 1`] = `
 Object {
   "continue-on-error": true,
+  "permissions": Object {
+    "contents": "write",
+    "id-token": "write",
+  },
   "runs-on": "ubuntu-latest",
   "steps": Array [
     Object {

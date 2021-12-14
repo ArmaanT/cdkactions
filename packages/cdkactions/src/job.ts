@@ -1,5 +1,5 @@
 import { Construct } from 'constructs';
-import { StringMap, RunProps, DefaultsProps } from './types';
+import { StringMap, RunProps, DefaultsProps, PermissionsProps } from './types';
 import { renameKeys } from './utils';
 import { Workflow } from './workflow';
 
@@ -193,6 +193,12 @@ export interface JobProps {
    * Additional Docker services provided to the job.
    */
   readonly services?: { [key: string]: DockerProps };
+
+  /**
+   * Modifies the default permissions granted to the GITHUB_TOKEN
+   * https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#jobsjob_idpermissions
+   */
+  readonly permissions?: PermissionsProps;
 }
 
 /**

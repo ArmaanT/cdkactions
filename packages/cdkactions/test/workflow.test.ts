@@ -18,6 +18,10 @@ test('toGHAction', () => {
         workingDirectory: '~/',
       },
     },
+    permissions: {
+      'id-token': 'write',
+      'contents': 'write',
+    },
   });
   expect(workflow.toGHAction()).toMatchSnapshot();
 });

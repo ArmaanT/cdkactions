@@ -27,5 +27,9 @@ Object {
       ],
     },
   },
+  "permissions": Object {
+    "contents": "write",
+    "id-token": "write",
+  },
 }
 `;
