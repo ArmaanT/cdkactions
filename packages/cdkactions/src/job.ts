@@ -113,7 +113,6 @@ export interface StrategyProps {
    */
   readonly matrix?: { [key: string]: Array<any> };
 
-
   /**
    * Stop jobs when a single job fails.
    */
@@ -123,6 +122,21 @@ export interface StrategyProps {
    * Maximum parallel jobs.
    */
   readonly maxParallel?: number;
+}
+
+/**
+ * Environment configuration block.
+ */
+export interface EnvironmentProps {
+  /**
+   * Name of the deployment environment.
+   */
+  readonly name?: string;
+
+  /**
+   * URL of the deployment environment.
+   */
+  readonly url?: string;
 }
 
 /**
@@ -153,6 +167,11 @@ export interface JobProps {
    * A map of environment variables to provide to the job.
    */
   readonly env?: StringMap;
+
+  /**
+   * The deployment environment of this job.
+   */
+  readonly environment?: string | EnvironmentProps;
 
   /**
    * A map of default settings to apply to all steps in this job.

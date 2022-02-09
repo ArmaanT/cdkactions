@@ -23,6 +23,7 @@ Name|Description
 [CredentialsProps](#cdkactions-credentialsprops)|Credentials to connect to a Docker registry with.
 [DefaultsProps](#cdkactions-defaultsprops)|A defaults configuration block.
 [DockerProps](#cdkactions-dockerprops)|Generic Docker configuration.
+[EnvironmentProps](#cdkactions-environmentprops)|Environment configuration block.
 [EventMap](#cdkactions-eventmap)|Events with additional subtypes.
 [IssueCommentTypes](#cdkactions-issuecommenttypes)|Configuration for the IssueComment event.
 [IssuesTypes](#cdkactions-issuestypes)|Configuration for the Issues event.
@@ -146,6 +147,7 @@ new CheckoutJob(scope: Workflow, id: string, config: JobProps)
   * **continueOnError** (<code>boolean</code>)  Continue workflow if job fails. __*Optional*__
   * **defaults** (<code>[DefaultsProps](#cdkactions-defaultsprops)</code>)  A map of default settings to apply to all steps in this job. __*Optional*__
   * **env** (<code>[StringMap](#cdkactions-stringmap)</code>)  A map of environment variables to provide to the job. __*Optional*__
+  * **environment** (<code>string &#124; [EnvironmentProps](#cdkactions-environmentprops)</code>)  The deployment environment of this job. __*Optional*__
   * **if** (<code>string</code>)  When to run this job. __*Optional*__
   * **name** (<code>string</code>)  Displayed name of the job. __*Optional*__
   * **needs** (<code>string &#124; Array<string></code>)  A job or list of jobs that must successfully complete before running this one. __*Optional*__
@@ -182,6 +184,7 @@ new Job(scope: Workflow, id: string, config: JobProps)
   * **continueOnError** (<code>boolean</code>)  Continue workflow if job fails. __*Optional*__
   * **defaults** (<code>[DefaultsProps](#cdkactions-defaultsprops)</code>)  A map of default settings to apply to all steps in this job. __*Optional*__
   * **env** (<code>[StringMap](#cdkactions-stringmap)</code>)  A map of environment variables to provide to the job. __*Optional*__
+  * **environment** (<code>string &#124; [EnvironmentProps](#cdkactions-environmentprops)</code>)  The deployment environment of this job. __*Optional*__
   * **if** (<code>string</code>)  When to run this job. __*Optional*__
   * **name** (<code>string</code>)  Displayed name of the job. __*Optional*__
   * **needs** (<code>string &#124; Array<string></code>)  A job or list of jobs that must successfully complete before running this one. __*Optional*__
@@ -403,6 +406,20 @@ Name | Type | Description
 
 
 
+## struct EnvironmentProps  <a id="cdkactions-environmentprops"></a>
+
+
+Environment configuration block.
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**name**? | <code>string</code> | Name of the deployment environment.<br/>__*Optional*__
+**url**? | <code>string</code> | URL of the deployment environment.<br/>__*Optional*__
+
+
+
 ## struct EventMap  <a id="cdkactions-eventmap"></a>
 
 
@@ -473,6 +490,7 @@ Name | Type | Description
 **continueOnError**? | <code>boolean</code> | Continue workflow if job fails.<br/>__*Optional*__
 **defaults**? | <code>[DefaultsProps](#cdkactions-defaultsprops)</code> | A map of default settings to apply to all steps in this job.<br/>__*Optional*__
 **env**? | <code>[StringMap](#cdkactions-stringmap)</code> | A map of environment variables to provide to the job.<br/>__*Optional*__
+**environment**? | <code>string &#124; [EnvironmentProps](#cdkactions-environmentprops)</code> | The deployment environment of this job.<br/>__*Optional*__
 **if**? | <code>string</code> | When to run this job.<br/>__*Optional*__
 **name**? | <code>string</code> | Displayed name of the job.<br/>__*Optional*__
 **needs**? | <code>string &#124; Array<string></code> | A job or list of jobs that must successfully complete before running this one.<br/>__*Optional*__
