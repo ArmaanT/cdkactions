@@ -40,7 +40,24 @@ export interface IssuesTypes {
   /**
    * Supported types.
    */
-  readonly types: Array<'opened' | 'edited' | 'deleted' | 'transferred' | 'pinned' | 'unpinned' | 'closed' | 'reopened' | 'assigned' | 'unassigned' | 'labeled' | 'unlabeled' | 'locked' | 'unlocked' | 'milestoned' | 'demilestoned'>;
+  readonly types: Array<
+    | 'opened'
+    | 'edited'
+    | 'deleted'
+    | 'transferred'
+    | 'pinned'
+    | 'unpinned'
+    | 'closed'
+    | 'reopened'
+    | 'assigned'
+    | 'unassigned'
+    | 'labeled'
+    | 'unlabeled'
+    | 'locked'
+    | 'unlocked'
+    | 'milestoned'
+    | 'demilestoned'
+  >;
 }
 
 /**
@@ -100,7 +117,22 @@ export interface PullRequestTypes extends PushTypes {
   /**
    * Supported types.
    */
-  readonly types?: Array<'assigned' | 'unassigned' | 'labeled' | 'unlabeled' | 'opened' | 'edited' | 'closed' | 'reopened' | 'synchronize' | 'ready_for_review' | 'locked' | 'unlocked' | 'review_requested' | 'review_request_removed'>;
+  readonly types?: Array<
+    | 'assigned'
+    | 'unassigned'
+    | 'labeled'
+    | 'unlabeled'
+    | 'opened'
+    | 'edited'
+    | 'closed'
+    | 'reopened'
+    | 'synchronize'
+    | 'ready_for_review'
+    | 'locked'
+    | 'unlocked'
+    | 'review_requested'
+    | 'review_request_removed'
+  >;
 }
 
 /**
@@ -130,7 +162,22 @@ export interface PullRequestTargetTypes {
   /**
    * Supported types.
    */
-  readonly types: Array<'assigned' | 'unassigned' | 'labeled' | 'unlabeled' | 'opened' | 'edited' | 'closed' | 'reopened' | 'synchronize' | 'ready_for_review' | 'locked' | 'unlocked' | 'review_requested' | 'review_request_removed'>;
+  readonly types: Array<
+    | 'assigned'
+    | 'unassigned'
+    | 'labeled'
+    | 'unlabeled'
+    | 'opened'
+    | 'edited'
+    | 'closed'
+    | 'reopened'
+    | 'synchronize'
+    | 'ready_for_review'
+    | 'locked'
+    | 'unlocked'
+    | 'review_requested'
+    | 'review_request_removed'
+  >;
 }
 
 /**
@@ -205,7 +252,7 @@ export interface ScheduleEvent {
   /**
    * A cron schedule to run the workflow on.
    */
-  readonly schedule: [{ 'cron': string }];
+  readonly schedule: [{ cron: string }];
 }
 
 /**
@@ -234,9 +281,68 @@ export interface WorkflowRunEvent {
 }
 
 /**
+ * Workflow dispatch input types.
+ */
+export enum WorkflowDispatchInputType {
+  CHOICE = 'choice',
+  BOOLEAN = 'boolean',
+  ENVIRONMENT = 'environment',
+  STRING = 'string',
+}
+
+/**
+ * Configuration for a manually dispatched workflow input
+ */
+export interface WorkflowDispatchEventInputProps {
+  /**
+   * The default value for the input if not supplied.
+   */
+  readonly default?: string | boolean;
+
+  /**
+   * A description for this particular input.
+   */
+  readonly description?: string;
+
+  /**
+   * Whether the input is required.
+   */
+  readonly required: boolean;
+
+  /**
+   * The type that identifies this input.
+   */
+  readonly type: WorkflowDispatchInputType;
+}
+
+/**
+ * Configuration for the WorkflowDispatch event properties.
+ */
+export interface WorkflowDispatchEventProps {
+  readonly inputs?: Record<string, WorkflowDispatchEventInputProps>;
+}
+
+/**
+ * Configuration for the WorkflowDispatch event.
+ */
+export interface WorkflowDispatchEvent {
+  readonly workflowDispatch: WorkflowDispatchEventProps;
+}
+
+/**
  * Events without additional subtypes.
  */
-export type EventStrings = 'workflowDispatch' | 'repositoryDispatch' | 'create' | 'delete' | 'deployment' | 'deploymentStatus' | 'fork' | 'gollum' | 'pageBuild' | 'public' | 'status';
+export type EventStrings =
+  | 'repositoryDispatch'
+  | 'create'
+  | 'delete'
+  | 'deployment'
+  | 'deploymentStatus'
+  | 'fork'
+  | 'gollum'
+  | 'pageBuild'
+  | 'public'
+  | 'status';
 
 /**
  * Events with additional subtypes.
@@ -345,7 +451,7 @@ export interface WorkflowProps {
   /**
    * When to run this workflow.
    */
-  readonly on: Events | Array<Events> | EventMap | ScheduleEvent | WorkflowRunEvent;
+  readonly on: Events | Array<Events> | EventMap | ScheduleEvent | WorkflowRunEvent | WorkflowDispatchEvent;
 
   /**
    * A map of environment variables to provide to the job.
@@ -420,4 +526,3 @@ export class Workflow extends Construct {
     return ghaction;
   }
 }
-
