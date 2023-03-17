@@ -41,22 +41,22 @@ export interface IssuesTypes {
    * Supported types.
    */
   readonly types: Array<
-    | 'opened'
-    | 'edited'
-    | 'deleted'
-    | 'transferred'
-    | 'pinned'
-    | 'unpinned'
-    | 'closed'
-    | 'reopened'
-    | 'assigned'
-    | 'unassigned'
-    | 'labeled'
-    | 'unlabeled'
-    | 'locked'
-    | 'unlocked'
-    | 'milestoned'
-    | 'demilestoned'
+  | 'opened'
+  | 'edited'
+  | 'deleted'
+  | 'transferred'
+  | 'pinned'
+  | 'unpinned'
+  | 'closed'
+  | 'reopened'
+  | 'assigned'
+  | 'unassigned'
+  | 'labeled'
+  | 'unlabeled'
+  | 'locked'
+  | 'unlocked'
+  | 'milestoned'
+  | 'demilestoned'
   >;
 }
 
@@ -118,20 +118,20 @@ export interface PullRequestTypes extends PushTypes {
    * Supported types.
    */
   readonly types?: Array<
-    | 'assigned'
-    | 'unassigned'
-    | 'labeled'
-    | 'unlabeled'
-    | 'opened'
-    | 'edited'
-    | 'closed'
-    | 'reopened'
-    | 'synchronize'
-    | 'ready_for_review'
-    | 'locked'
-    | 'unlocked'
-    | 'review_requested'
-    | 'review_request_removed'
+  | 'assigned'
+  | 'unassigned'
+  | 'labeled'
+  | 'unlabeled'
+  | 'opened'
+  | 'edited'
+  | 'closed'
+  | 'reopened'
+  | 'synchronize'
+  | 'ready_for_review'
+  | 'locked'
+  | 'unlocked'
+  | 'review_requested'
+  | 'review_request_removed'
   >;
 }
 
@@ -163,20 +163,20 @@ export interface PullRequestTargetTypes {
    * Supported types.
    */
   readonly types: Array<
-    | 'assigned'
-    | 'unassigned'
-    | 'labeled'
-    | 'unlabeled'
-    | 'opened'
-    | 'edited'
-    | 'closed'
-    | 'reopened'
-    | 'synchronize'
-    | 'ready_for_review'
-    | 'locked'
-    | 'unlocked'
-    | 'review_requested'
-    | 'review_request_removed'
+  | 'assigned'
+  | 'unassigned'
+  | 'labeled'
+  | 'unlabeled'
+  | 'opened'
+  | 'edited'
+  | 'closed'
+  | 'reopened'
+  | 'synchronize'
+  | 'ready_for_review'
+  | 'locked'
+  | 'unlocked'
+  | 'review_requested'
+  | 'review_request_removed'
   >;
 }
 

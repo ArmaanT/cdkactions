@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`manual workflow dispatch 1`] = `
+Object {
+  "jobs": Object {},
+  "name": "Test",
+  "on": Object {
+    "workflowDispatch": Object {
+      "inputs": Object {
+        "one": Object {
+          "default": "foo",
+          "description": "input one",
+          "required": false,
+          "type": "string",
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`toGHAction 1`] = `
 Object {
   "defaults": Object {
