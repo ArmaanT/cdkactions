@@ -45,8 +45,18 @@ Name|Description
 [StrategyProps](#cdkactions-strategyprops)|Strategy configuration block.
 [StringMap](#cdkactions-stringmap)|A generic string to string map.
 [WatchTypes](#cdkactions-watchtypes)|Configuration for the Watch event.
+[WorkflowDispatchEvent](#cdkactions-workflowdispatchevent)|Configuration for the WorkflowDispatch event.
+[WorkflowDispatchEventInputProps](#cdkactions-workflowdispatcheventinputprops)|Configuration for a manually dispatched workflow input.
+[WorkflowDispatchEventProps](#cdkactions-workflowdispatcheventprops)|Configuration for the WorkflowDispatch event properties.
 [WorkflowProps](#cdkactions-workflowprops)|Configuration for a single GitHub Action workflow.
 [WorkflowRunEvent](#cdkactions-workflowrunevent)|Configuration for the WorkflowRun event.
+
+
+**Enums**
+
+Name|Description
+----|-----------
+[WorkflowDispatchInputType](#cdkactions-workflowdispatchinputtype)|Workflow dispatch input types.
 
 
 
@@ -274,7 +284,7 @@ new Workflow(scope: Construct, id: string, config: WorkflowProps)
 * **id** (<code>string</code>)  The name of this workflow.
 * **config** (<code>[WorkflowProps](#cdkactions-workflowprops)</code>)  *No description*
   * **name** (<code>string</code>)  Name of the workflow. 
-  * **on** (<code>[ScheduleEvent](#cdkactions-scheduleevent) &#124; [WorkflowRunEvent](#cdkactions-workflowrunevent) &#124; [EventMap](#cdkactions-eventmap) &#124; string &#124; Array<string></code>)  When to run this workflow. 
+  * **on** (<code>[ScheduleEvent](#cdkactions-scheduleevent) &#124; [WorkflowRunEvent](#cdkactions-workflowrunevent) &#124; [WorkflowDispatchEvent](#cdkactions-workflowdispatchevent) &#124; [EventMap](#cdkactions-eventmap) &#124; string &#124; Array<string></code>)  When to run this workflow. 
   * **defaults** (<code>[DefaultsProps](#cdkactions-defaultsprops)</code>)  A map of default settings to apply to all steps in this job. __*Optional*__
   * **env** (<code>[StringMap](#cdkactions-stringmap)</code>)  A map of environment variables to provide to the job. __*Optional*__
 
@@ -734,6 +744,48 @@ Name | Type | Description
 
 
 
+## struct WorkflowDispatchEvent  <a id="cdkactions-workflowdispatchevent"></a>
+
+
+Configuration for the WorkflowDispatch event.
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**workflowDispatch** | <code>[WorkflowDispatchEventProps](#cdkactions-workflowdispatcheventprops)</code> | <span></span>
+
+
+
+## struct WorkflowDispatchEventInputProps  <a id="cdkactions-workflowdispatcheventinputprops"></a>
+
+
+Configuration for a manually dispatched workflow input.
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**required** | <code>boolean</code> | Whether the input is required.
+**type** | <code>[WorkflowDispatchInputType](#cdkactions-workflowdispatchinputtype)</code> | The type that identifies this input.
+**default**? | <code>string &#124; boolean</code> | The default value for the input if not supplied.<br/>__*Optional*__
+**description**? | <code>string</code> | A description for this particular input.<br/>__*Optional*__
+
+
+
+## struct WorkflowDispatchEventProps  <a id="cdkactions-workflowdispatcheventprops"></a>
+
+
+Configuration for the WorkflowDispatch event properties.
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**inputs**? | <code>Map<string, [WorkflowDispatchEventInputProps](#cdkactions-workflowdispatcheventinputprops)></code> | __*Optional*__
+
+
+
 ## struct WorkflowProps  <a id="cdkactions-workflowprops"></a>
 
 
@@ -744,7 +796,7 @@ Configuration for a single GitHub Action workflow.
 Name | Type | Description 
 -----|------|-------------
 **name** | <code>string</code> | Name of the workflow.
-**on** | <code>[ScheduleEvent](#cdkactions-scheduleevent) &#124; [WorkflowRunEvent](#cdkactions-workflowrunevent) &#124; [EventMap](#cdkactions-eventmap) &#124; string &#124; Array<string></code> | When to run this workflow.
+**on** | <code>[ScheduleEvent](#cdkactions-scheduleevent) &#124; [WorkflowRunEvent](#cdkactions-workflowrunevent) &#124; [WorkflowDispatchEvent](#cdkactions-workflowdispatchevent) &#124; [EventMap](#cdkactions-eventmap) &#124; string &#124; Array<string></code> | When to run this workflow.
 **defaults**? | <code>[DefaultsProps](#cdkactions-defaultsprops)</code> | A map of default settings to apply to all steps in this job.<br/>__*Optional*__
 **env**? | <code>[StringMap](#cdkactions-stringmap)</code> | A map of environment variables to provide to the job.<br/>__*Optional*__
 
@@ -764,5 +816,17 @@ Name | Type | Description
 **branchesIgnore**? | <code>Array<string></code> | Branches to ignore when triggering this workflow.<br/>__*Optional*__
 **types**? | <code>Array<string></code> | Supported types.<br/>__*Optional*__
 
+
+
+## enum WorkflowDispatchInputType  <a id="cdkactions-workflowdispatchinputtype"></a>
+
+Workflow dispatch input types.
+
+Name | Description
+-----|-----
+**CHOICE** |
+**BOOLEAN** |
+**ENVIRONMENT** |
+**STRING** |
 
 

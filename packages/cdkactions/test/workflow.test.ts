@@ -1,5 +1,5 @@
 import { Construct } from 'constructs';
-import { Job } from '../src';
+import { Job, WorkflowDispatchInputType } from '../src';
 import { TestingWorkflow } from './utils';
 
 test('toGHAction', () => {
@@ -41,14 +41,14 @@ test('2 jobs with same key -> error', () => {
     runsOn: 'ubuntu-latest',
     steps: [],
   });
-  expect(() =>
-    new Job(workflow, 'job', {
-      runsOn: 'ubuntu-latest',
-      steps: [],
-    }),
+  expect(
+    () =>
+      new Job(workflow, 'job', {
+        runsOn: 'ubuntu-latest',
+        steps: [],
+      }),
   ).toThrowError("There is already a Construct with name 'job' in Workflow [test]");
-},
-);
+});
 
 test('jobs kept in insertion order', () => {
   const workflow = TestingWorkflow();
@@ -70,11 +70,29 @@ test('jobs kept in insertion order', () => {
   const jobs = Object.keys(workflow.toGHAction().jobs);
   const expected = [job_one, job_two, job_three];
   expect(jobs).toEqual(expected);
-},
-);
+});
 
 test('non-job children are ignored', () => {
   const workflow = TestingWorkflow();
   new Construct(workflow, 'not_job');
   expect(workflow.toGHAction().jobs).toEqual({});
+});
+
+test('manual workflow dispatch', () => {
+  const workflow = TestingWorkflow({
+    name: 'Test',
+    on: {
+      workflowDispatch: {
+        inputs: {
+          one: {
+            default: 'foo',
+            description: 'input one',
+            required: false,
+            type: WorkflowDispatchInputType.STRING,
+          },
+        },
+      },
+    },
+  });
+  expect(workflow.toGHAction()).toMatchSnapshot();
 });
